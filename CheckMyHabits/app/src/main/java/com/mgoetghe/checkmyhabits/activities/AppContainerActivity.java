@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.mgoetghe.checkmyhabits.R;
+import com.mgoetghe.checkmyhabits.fragments.HomeFragment;
 
 /**
  * This activity is the container for our whole application.
@@ -13,10 +14,24 @@ import com.mgoetghe.checkmyhabits.R;
  */
 
 public class AppContainerActivity extends FragmentActivity {
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.app_container_activity);
+        setContentView(R.layout.app_container_activity);
+
+        this.displayHome();
+    }
+
+    private void displayHome() {
+        HomeFragment homeFragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, homeFragment).commit();
+    }
+
+    private void displayHabitsDetails() {
+
     }
 
 }
