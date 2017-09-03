@@ -24,12 +24,18 @@ public class AppContainerActivity extends FragmentActivity {
         this.displayHome();
     }
 
+    /**
+     * Handles the display of the home fragment
+     */
     private void displayHome() {
         HomeFragment homeFragment = new HomeFragment();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, homeFragment).commit();
     }
 
+    /**
+     * Handles the display of the details fragment
+     */
     private void displayHabitsDetails() {
 
     }
